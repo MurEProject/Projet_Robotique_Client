@@ -52,6 +52,21 @@ $(function() {
                             { id: 10 }
                             );
                      });
+	$(".camera-gauche").click(function() {
+			         $.post('fonction.php',
+			                { id: 11 }
+			                );
+			         });
+	$(".camera-centrer").click(function() {
+			         $.post('fonction.php',
+			                { id: 12 }
+			                );
+			         });
+	$(".camera-droite").click(function() {
+			         $.post('fonction.php',
+			                { id: 13 }
+			                );
+			         });
   
 	/* Permet de rafraichir l'image de la camera toutes les secondes */ 
 	function refresh() {

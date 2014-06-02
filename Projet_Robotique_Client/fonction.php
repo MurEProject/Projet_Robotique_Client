@@ -53,6 +53,18 @@
 	{
 		$message = array( 'direction' => '', 'vitesse' => $_POST['vitesse'], 'pince' => 'descendre');
 	}
+	else if($_POST['id']==11)
+	{
+		$message = array( 'camera' => '', 'vitesse' => $_POST['vitesse'], 'pince' => 'gauche');
+	}
+	else if($_POST['id']==12)
+	{
+		$message = array( 'camera' => '', 'vitesse' => $_POST['vitesse'], 'pince' => 'centre');
+	}
+	else if($_POST['id']==13)
+	{
+		$message = array( 'camera' => '', 'vitesse' => $_POST['vitesse'], 'pince' => 'droite');
+	}
 	
 	
 	if(isset($message['GPSS'])){

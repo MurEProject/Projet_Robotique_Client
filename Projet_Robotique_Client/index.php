@@ -14,6 +14,12 @@
 
 	<h1>Robot</h1>
 	<div id="contenu">
+		<center><div id="panel-direction-camera">
+		    <div class="title-direction-camera">Orienter webcam</div>
+		        <label class="camera-gauche" >Gauche</label>
+		        <label class="camera-centrer" >Centrer</label>
+		        <label class="camera-droite" >Droite</label>
+		</div></center>
 		<div id="camera">
 		   <p>Photo de la camera à mettre : rafraichissement toutes les 2 secondes </p>
 		  <!-- Image rafraichie
