@@ -29,10 +29,10 @@ $(function() {
 		$.post('fonction.php',
 		{ id: 6 },
 		function (data){
-            console.log(data);
-               console.log(data.GPS);
-			document.getElementById('x').value = data['coordoX'];
-            //document.getElementById('y').value = data['coordoY'];
+            obj = JSON.parse(data); //Parse les données json récupéréés pour qu'on puisse les lire
+            //console.log(obj.coordoX);
+			document.getElementById('x').value = obj.coordoX;
+            document.getElementById('y').value = obj.coordoY;
 		});
 	});
     $(".ouvrir").click(function() {
