@@ -58,13 +58,12 @@ $(function() {
         $.post('fonction.php',
             { id: 14 },
             function (data){
-               console.log(data);
+                console.log(data);
                });
-            });
 	   var tmp = new Date();
 	   var img = document.getElementById("cam");
 	   img.src = img.src + '?' + tmp.getTime();
-	}
+    };
  
 	window.onload = function() {
   
