@@ -55,15 +55,15 @@
 	}
 	else if($_POST['id']==11)
 	{
-		$message = array( 'camera' => '', 'vitesse' => $_POST['vitesse'], 'pince' => 'gauche');
+		$message = array( 'direction' => '', 'vitesse' => $_POST['vitesse'], 'camera' => 'gauche');
 	}
 	else if($_POST['id']==12)
 	{
-		$message = array( 'camera' => '', 'vitesse' => $_POST['vitesse'], 'pince' => 'centre');
+		$message = array( 'direction' => '', 'vitesse' => $_POST['vitesse'], 'camera' => 'centre');
 	}
 	else if($_POST['id']==13)
 	{
-		$message = array( 'camera' => '', 'vitesse' => $_POST['vitesse'], 'pince' => 'droite');
+		$message = array( 'direction' => '', 'vitesse' => $_POST['vitesse'], 'camera' => 'droite');
 	}
 	
 	
