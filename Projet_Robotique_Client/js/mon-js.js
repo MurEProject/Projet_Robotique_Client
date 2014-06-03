@@ -30,8 +30,9 @@ $(function() {
 		{ id: 6 },
 		function (data){
             console.log(data);
+               console.log(data.GPS);
 			document.getElementById('x').value = data['coordoX'];
-            document.getElementById('y').value = data['coordoY'];
+            //document.getElementById('y').value = data['coordoY'];
 		});
 	});
     $(".ouvrir").click(function() {

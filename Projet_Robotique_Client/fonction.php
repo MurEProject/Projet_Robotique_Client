@@ -15,7 +15,7 @@
 	}
 	else if($_POST['id']==2)
 	{
-		$message = array( 'direction' => '', 'droite' => $_POST['vitesse'], 'pince' => '');
+		$message = array( 'direction' => 'droite', 'vitesse' => $_POST['vitesse'], 'pince' => '');
 	}
 	else if($_POST['id']==3)
 	{
