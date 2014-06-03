@@ -51,8 +51,6 @@
                 <label class="descendre" >Descendre</label>
         </div>
 	</div>
-	 <span class="info"></span>
-
 	</body>
 
 </html>

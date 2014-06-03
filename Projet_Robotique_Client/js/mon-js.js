@@ -55,13 +55,23 @@ $(function() {
   
 	/* Permet de rafraichir l'image de la camera toutes les secondes */ 
 	function refresh() {
+        $.post('fonction.php',
+            { id: 14 },
+            function (data){
+               console.log(data);
+               });
+            });
 	   var tmp = new Date();
 	   var img = document.getElementById("cam");
 	   img.src = img.src + '?' + tmp.getTime();
 	}
  
 	window.onload = function() {
+  
+
 	  setInterval(refresh,1000);
+
+
 	 };
 	/* Fin du rafraichissement d'image caméra */
 		

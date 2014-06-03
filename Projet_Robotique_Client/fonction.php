@@ -53,6 +53,13 @@
 	{
 		$message = array( 'direction' => '', 'vitesse' => $_POST['vitesse'], 'pince' => 'descendre');
 	}
+    else if($_POST['id']==14)
+	{
+		$message = array( 'direction' => '', 'vitesse' => $_POST['vitesse'], 'pince' => '', 'camera' => 'image');
+        $message = json_encode($message);
+        //$message = $message."\r\n";
+        $test = socket_write($socket, $message, strlen($message)) or die("Could not send data to server\n");
+	}
 	
 	
 	if(isset($message['GPSS'])){
@@ -77,6 +84,11 @@
         echo $result;
         
     }
+    else if($_POST['id']==14)
+	{
+		$result = socket_read ($socket, 1024) or die("Could not read server response\n");
+        echo $result;
+	}
 	else{
 		//$message= serialize($message);
                 $message = json_encode($message);
