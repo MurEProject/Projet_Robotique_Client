@@ -43,6 +43,13 @@
 			
 		</div>
 
+        <div id="panel-pince">
+            <div class="title-pince">Pince</div>
+                <label class="ouvrir" >Ouvrir</label>
+                <label class="fermer" >Fermer</label>
+                <label class="monter" >Monter</label>
+                <label class="descendre" >Descendre</label>
+        </div>
 	</div>
 	 <span class="info"></span>
 

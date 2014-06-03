@@ -11,43 +11,47 @@
 	
 	if($_POST['id']==1)
 	{
-		$message = array( 'pince' => 'ouvrir', 'vitesse' => $_POST['vitesse']);
+		$message = array( 'direction' => 'gauche', 'vitesse' => $_POST['vitesse'], 'pince' => '');
 	}
 	else if($_POST['id']==2)
 	{
-		$message = array( 'pince' => 'descendre', 'vitesse' => $_POST['vitesse']);
+		$message = array( 'direction' => '', 'droite' => $_POST['vitesse'], 'pince' => '');
 	}
 	else if($_POST['id']==3)
 	{
-		$message = array( 'direction' => 'recule', 'vitesse' => $_POST['vitesse']);
+		$message = array( 'direction' => 'recule', 'vitesse' => $_POST['vitesse'], 'pince' => '');
 	}
 	else if($_POST['id']==4)
 	{
-		$message = array( 'direction' => 'avancer', 'vitesse' => $_POST['vitesse']);
+		$message = array( 'direction' => 'avancer', 'vitesse' => $_POST['vitesse'], 'pince' => '');
 	}
 	else if($_POST['id']==5)
 	{
-		$message = array( 'direction' => 'stop', 'vitesse' => $_POST['vitesse']);
+		$message = array( 'direction' => 'stop', 'vitesse' => $_POST['vitesse'], 'pince' => '');
 	}
 	else if($_POST['id']==6)
 	{
 		$message = array( 'GPS' => 'true');
-                $message = json_encode($message);
-                $message = $message."\r\n";
-        //echo $message;
-                $test = socket_write($socket, $message, strlen($message)) or die("Could not send data to server\n");
+        $message = json_encode($message);
+        //$message = $message."\r\n";
+        $test = socket_write($socket, $message, strlen($message)) or die("Could not send data to server\n");
         
-                //if($test !== false ){
-                    //echo $test;
-                //$message ="test";
-               $result = socket_read ($socket, 1024) or die("Could not read server response\n");
-                echo $result;
-                //}
-
-                //echo $result;
-                //$test = json_decode($result);
-                //$message = $test['coordoX'];
-                //$message = "tzt";
+	}
+    else if($_POST['id']==7)
+	{
+		$message = array( 'direction' => '', 'vitesse' => $_POST['vitesse'], 'pince' => 'ouvrir');
+	}
+    else if($_POST['id']==8)
+	{
+		$message = array( 'direction' => '', 'vitesse' => $_POST['vitesse'], 'pince' => 'fermer');
+	}
+    else if($_POST['id']==9)
+	{
+		$message = array( 'direction' => '', 'vitesse' => $_POST['vitesse'], 'pince' => 'monter');
+	}
+    else if($_POST['id']==10)
+	{
+		$message = array( 'direction' => '', 'vitesse' => $_POST['vitesse'], 'pince' => 'descendre');
 	}
 	
 	
@@ -67,11 +71,12 @@
 			echo $result['GPS'];
 		}
 	}
-        else if($_POST['id']==6){
-            
-                //$result = socket_read ($socket, 1024) or die("Could not read server response\n");
-                //echo $result;
-        }
+    else if($_POST['id']==6)
+	{
+        $result = socket_read ($socket, 1024) or die("Could not read server response\n");
+        echo $result;
+        
+    }
 	else{
 		//$message= serialize($message);
                 $message = json_encode($message);

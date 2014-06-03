@@ -1,6 +1,6 @@
 
 <?php
-
+$test = "alllo";
 $host    = "127.0.0.1";
 $port    = 25003;
 $message = "Hello Server";
