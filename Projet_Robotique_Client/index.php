@@ -6,7 +6,6 @@
      <title>Robot</title>
      <link rel="stylesheet" type="text/css" href="css/styles.css">
 	</head>
-
 	<body>
      <script src="js/jquery.js"></script>
      <script src="js/mon-js.js"></script>
@@ -15,11 +14,23 @@
 	<h1>Robot</h1>
 	<div id="contenu">
         <div id="panel-direction-camera">
-            <div class="title-direction-camera">Orienter webcam</div>
+            <div class="title-direction-camera">Orienter cam</div>
             <label class="camera-gauche" >Gauche</label>
             <label class="camera-centrer" >Centrer</label>
             <label class="camera-droite" >Droite</label>
         </div>
+<textarea id="transcription" readonly="readonly"></textarea>
+
+<h3>Log</h3>
+<div id="log"></div>
+
+<div class="buttons-wrapper">
+<button id="button-play-ws" class="button-demo">Play demo</button>
+<button id="button-stop-ws" class="button-demo">Stop demo</button>
+<button id="clear-all" class="button-demo">Clear all</button>
+</div>
+<span id="ws-unsupported" class="hidden">API not supported</span>
+
 		<div id="camera">
 		   <p>Photo de la camera à mettre : rafraichissement toutes les 2 secondes </p>
 		  <!-- Image rafraichie -->
@@ -55,7 +66,11 @@
                 <label class="monter" >Monter</label>
                 <label class="descendre" >Descendre</label>
         </div>
+    <div id="panel-batterie" class="batterie">
+        <IMG  id="img-batterie" SRC="img/batterie_chargt_100_2.png"  ALT="Etat batterie" TITLE="Etat batterie">
+    </div>
 	</div>
+
 	</body>
 
 </html>

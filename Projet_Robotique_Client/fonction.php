@@ -72,6 +72,16 @@
         //$message = $message."\r\n";
         $test = socket_write($socket, $message, strlen($message)) or die("Could not send data to server\n");
 	}
+    else if($_POST['id']==15)
+	{
+		$message = array( 'direction' => $_POST['texte'], 'vitesse' => $_POST['vitesse'], 'camera' => '', 'vocale' => $_POST['texte']);
+	}
+    else if($_POST['id']==16)
+	{
+		$message = array( 'Batterie' => 'true');
+		$message = json_encode($message);
+		$test = socket_write($socket, $message, strlen($message)) or die("Could not send data to server\n");
+	}
 	
 	
 	if(isset($message['GPSS'])){
@@ -90,7 +100,7 @@
 			echo $result['GPS'];
 		}
 	}
-    else if($_POST['id']==6)
+    else if($_POST['id']==6 || $_POST['id']==16) //Batterie ou GPS
 	{
         $result = socket_read ($socket, 2048) or die("Could not read server response\n");
         echo $result;
