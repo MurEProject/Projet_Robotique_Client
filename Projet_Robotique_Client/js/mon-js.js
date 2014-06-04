@@ -68,7 +68,7 @@ $(function() {
 	window.onload = function() {
   
 
-	  setInterval(refresh,1000);
+	  setInterval(refresh,4000);
 
 
 	 };
