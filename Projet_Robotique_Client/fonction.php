@@ -107,7 +107,7 @@
         
         //imagejpeg($im,'imagetest.jpeg');
         
-        echo obj;
+        echo $obj.$result;
 	}
 	else{
 		//$message= serialize($message);
