@@ -99,15 +99,15 @@
     else if($_POST['id']==14)
 	{
 		$result = socket_read ($socket, 1024) or die("Could not read server response\n");
-        $obj = var_dump(json_decode($result));
-        //$result = $obj->{'Image'};
+        $obj = json_decode($result);
+        echo $obj->{'Image'};
         //$data = base64_decode($result);
         //$im = imagecreatefromstring($data);
         //header('Content-Type: image/jpeg');
         
         //imagejpeg($im,'imagetest.jpeg');
         
-        echo $obj;
+        //echo $obj;
 	}
 	else{
 		//$message= serialize($message);
