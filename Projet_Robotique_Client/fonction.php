@@ -104,7 +104,7 @@
         $im = imagecreatefromstring($data);
         header('Content-Type: image/jpeg');
         
-        imagejpeg($im);
+        imagejpeg($im,'imagetest.jpeg');
         
         echo $result;
 	}
