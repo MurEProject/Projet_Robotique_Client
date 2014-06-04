@@ -53,6 +53,18 @@
 	{
 		$message = array( 'direction' => '', 'vitesse' => $_POST['vitesse'], 'pince' => 'descendre');
 	}
+    else if($_POST['id']==11)
+	{
+		$message = array( 'direction' => '', 'vitesse' => $_POST['vitesse'], 'camera' => 'gauche');
+	}
+	else if($_POST['id']==12)
+	{
+		$message = array( 'direction' => '', 'vitesse' => $_POST['vitesse'], 'camera' => 'centre');
+	}
+	else if($_POST['id']==13)
+	{
+		$message = array( 'direction' => '', 'vitesse' => $_POST['vitesse'], 'camera' => 'droite');
+	}
     else if($_POST['id']==14)
 	{
 		$message = array( 'direction' => '', 'vitesse' => $_POST['vitesse'], 'pince' => '', 'camera' => 'image');
@@ -92,9 +104,9 @@
         $im = imagecreatefromstring($data);
         header('Content-Type: image/jpeg');
         
-        imagejpeg($im);
+        imagejpeg($im,'cam.jpeg');
         
-        //echo $result;
+        echo $result;
 	}
 	else{
 		//$message= serialize($message);
