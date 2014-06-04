@@ -100,11 +100,11 @@
 	{
 		$result = socket_read ($socket, 1024) or die("Could not read server response\n");
         
-        $data = base64_decode($result);
-        $im = imagecreatefromstring($data);
-        header('Content-Type: image/jpeg');
+        //$data = base64_decode($result);
+        //$im = imagecreatefromstring($data);
+        //header('Content-Type: image/jpeg');
         
-        imagejpeg($im,'cam.jpeg');
+        //imagejpeg($im,'cam.jpeg');
         
         echo $result;
 	}

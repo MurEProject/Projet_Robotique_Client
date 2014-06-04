@@ -28,7 +28,7 @@
 		</div>
 		<div id="information">
 			<div class="title-information">Informations</div>	
-			<label>Vitesse</label><input type="text" id="vitesse" name="vitesse" value=""></input>
+			<label>Vitesse</label><input type="range" min="50" max="200" value="100" id="vitesse" name="vitesse"/>
 			<label>Coordo X</label><input type="text" id="x" name="x" value=""></input>
 			<label>Coordo Y</label><input type="text" id="y" name="y" value=""></input>
 			<div class="title-information">Rafraichir GPS</div>
