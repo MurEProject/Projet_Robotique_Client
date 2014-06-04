@@ -83,8 +83,8 @@ $(function() {
  
 	window.onload = function() {
   
-
-	  setInterval(refresh,1000);
+  refresh();
+	  //setInterval(refresh,1000);
 
 
 	 };
