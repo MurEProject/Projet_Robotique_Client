@@ -76,9 +76,9 @@ $(function() {
             function (data){
                 console.log(data);
                });
-	   //var tmp = new Date();
-	   //var img = document.getElementById("cam");
-	   //img.src = img.src + '?' + tmp.getTime();
+	   var tmp = new Date();
+	   var img = document.getElementById("cam");
+	   img.src = img.src + '?' + tmp.getTime();
     };
  
 	window.onload = function() {
