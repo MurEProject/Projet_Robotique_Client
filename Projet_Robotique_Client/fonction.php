@@ -100,14 +100,14 @@
 	{
 		$result = socket_read ($socket, 1024) or die("Could not read server response\n");
         $obj = json_decode($result);
-        $result = $obj->{'image'};
+        //$result = $obj->{'image'};
         //$data = base64_decode($result);
         //$im = imagecreatefromstring($data);
         //header('Content-Type: image/jpeg');
         
         //imagejpeg($im,'imagetest.jpeg');
         
-        echo $result;
+        echo obj;
 	}
 	else{
 		//$message= serialize($message);
