@@ -80,7 +80,7 @@
 		socket_write($socket, $message, strlen($message)) or die("Could not send data to server\n");
 		
 		// get server response
-		$result = socket_read ($socket, 1024) or die("Could not read server response\n");
+		$result = socket_read ($socket, 2048) or die("Could not read server response\n");
 		// clean up input string
 		//$input = trim($input);
 		$result = unserialize($result);
@@ -92,13 +92,13 @@
 	}
     else if($_POST['id']==6)
 	{
-        $result = socket_read ($socket, 1024) or die("Could not read server response\n");
+        $result = socket_read ($socket, 2048) or die("Could not read server response\n");
         echo $result;
         
     }
     else if($_POST['id']==14)
 	{
-		$result = socket_read ($socket, 1024) or die("Could not read server response\n");
+		$result = socket_read ($socket, 2048) or die("Could not read server response\n");
         //$obj = json_decode($result);
         //echo $obj->{'Image'};
         //$data = base64_decode($result);
