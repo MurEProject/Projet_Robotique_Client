@@ -68,49 +68,54 @@ $(function() {
                                    { id: 13 }
                                    );
                             });
-    $(".batterie").click(function() {
-                       $.post('fonction.php',
-                              { id: 16 },
-                              function (data){
-                              obj = JSON.parse(data);
-                              valueBatterie = parseInt(obj.Batterie);
-                              srcImg = "img/batterie_chargt_100_2.png";
-                              if (valueBatterie == 100)
-                              {
-                              srcImg = "img/batterie_chargt_100_2.png";
-                              }
-                              else if  (valueBatterie < 100 && valueBatterie >= 75)
-                              {
-                              srcImg = "img/batterie_chargt_75_2.png";
-                              }
-                              else if  (valueBatterie < 75 && valueBatterie >= 50)
-                              {
-                              srcImg = "img/batterie_chargt_50_2.png";
-                              }
-                              else if  (valueBatterie < 50 && valueBatterie >= 25)
-                              {
-                              srcImg = "img/batterie_chargt_25_2.png";
-                              }
-                              document.getElementById('img-batterie').src = srcImg;
-                              });
-                       });
+  
+  $( "#vitesse" ).change(function() {
+                        console.log( "modifiaction vitesse" );
+                         $.post('fonction.php',
+                                { id: 17,
+                                vitesse: document.getElementById('vitesse').value}
+                                );
+                        });
   
 	/* Permet de rafraichir l'image de la camera toutes les secondes */ 
 	function refresh() {
-        $.post('fonction.php',
-            { id: 14 },
-            function (data){
-                console.log(data);
-               });
-	   //var tmp = new Date();
-	   //var img = document.getElementById("cam");
-	   //img.src = img.src + '?' + tmp.getTime();
+	   var tmp = new Date();
+	   var img = document.getElementById("cam");
+	   img.src = img.src + '?' + tmp.getTime();
     };
+  function refreshBatterie() {
+    $.post('fonction.php',
+         { id: 16 },
+         function (data){
+         obj = JSON.parse(data);
+         valueBatterie = parseInt(obj.Batterie);
+         srcImg = "img/batterie_chargt_100_2.png";
+         if (valueBatterie == 100)
+         {
+         srcImg = "img/batterie_chargt_100_2.png";
+         }
+         else if  (valueBatterie < 100 && valueBatterie >= 75)
+         {
+         srcImg = "img/batterie_chargt_75_2.png";
+         }
+         else if  (valueBatterie < 75 && valueBatterie >= 50)
+         {
+         srcImg = "img/batterie_chargt_50_2.png";
+         }
+         else if  (valueBatterie < 50 && valueBatterie >= 25)
+         {
+         srcImg = "img/batterie_chargt_25_2.png";
+         }
+         document.getElementById('img-batterie').src = srcImg;
+         });
+  };
+  
  
 	window.onload = function() {
   
-        refresh();
-	  //setInterval(refresh,1000);
+        //refresh();
+        setInterval(refreshBatterie,300000);
+        setInterval(refresh,100);
 
 
 	 };

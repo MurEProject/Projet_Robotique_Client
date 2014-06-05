@@ -82,6 +82,10 @@
 		$message = json_encode($message);
 		$test = socket_write($socket, $message, strlen($message)) or die("Could not send data to server\n");
 	}
+    else if($_POST['id']==17)
+	{
+		$message = array( 'vitesse' => $_POST['vitesse']);
+	}
 	
 	
 	if(isset($message['GPSS'])){
@@ -108,7 +112,7 @@
     }
     else if($_POST['id']==14)
 	{
-		$result = socket_read ($socket, 100000) or die("Could not read server response\n");
+		$result = socket_read ($socket, 1024) or die("Could not read server response\n");
         //$obj = json_decode($result);
         //echo $obj->{'Image'};
         //$data = base64_decode($result);

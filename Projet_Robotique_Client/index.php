@@ -34,7 +34,7 @@
 		<div id="camera">
 		   <p>Photo de la camera à mettre : rafraichissement toutes les 2 secondes </p>
 		  <!-- Image rafraichie -->
-		  <IMG class="cam" id="cam" SRC="image.php" ALT="cam" TITLE="cam">
+		  <IMG class="cam" id="cam" SRC="http://146.19.17.134/image2.jpg" ALT="cam" TITLE="cam">
 		</div>
 		<div id="information">
 			<div class="title-information">Informations</div>	
