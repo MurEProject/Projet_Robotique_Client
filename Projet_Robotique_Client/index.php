@@ -10,26 +10,37 @@
      <script src="js/jquery.js"></script>
      <script src="js/mon-js.js"></script>
 
-
-	<h1>Robot</h1>
 	<div id="contenu">
+        <div id="panel-batterie" class="batterie">
+            <IMG  id="img-batterie" SRC="img/batterie_chargt_100_2.png"  ALT="Etat batterie" TITLE="Etat batterie">
+        </div>
         <div id="panel-direction-camera">
             <div class="title-direction-camera">Orienter cam</div>
             <label class="camera-gauche" >Gauche</label>
             <label class="camera-centrer" >Centrer</label>
             <label class="camera-droite" >Droite</label>
         </div>
-<textarea id="transcription" readonly="readonly"></textarea>
-
-<h3>Log</h3>
-<div id="log"></div>
+<div id="panel-pince">
+<div class="title-pince">Pince</div>
+<label class="ouvrir" >Ouvrir</label>
+<label class="fermer" >Fermer</label>
+<label class="monter" >Monter</label>
+<label class="descendre" >Descendre</label>
+</div>
+    <!-- CAPTEURS -->
+    <div id="capteur-mo">
+        <IMG class="capt" id="capt-avd" SRC="img/Capteur_avd_on.png" ALT="capteur avd" TITLE="capteur avd">
+        <IMG class="capt" id="capt-avg" SRC="img/Capteur_avg_on.png" ALT="capteur avg" TITLE="capteur avg">
+        <IMG class="capt" id="capt-ard" SRC="img/Capteur_ard_on.png" ALT="capteur ard" TITLE="capteur ard">
+        <IMG class="capt" id="capt-arg" SRC="img/Capteur_arg_on.png" ALT="capteur arg" TITLE="capteur arg">
+    </div>
+    <!-- FIN CAPTEURS -->
+<input type="hidden" id="transcription" readonly="readonly"></input>
 
 <div class="buttons-wrapper">
 <button id="button-play-ws" class="button-demo">Play demo</button>
 <button id="button-stop-ws" class="button-demo">Stop demo</button>
-<button id="clear-all" class="button-demo">Clear all</button>
 </div>
-<span id="ws-unsupported" class="hidden">API not supported</span>
 
 		<div id="camera">
 		   <p>Photo de la camera à mettre : rafraichissement toutes les 2 secondes </p>
@@ -59,16 +70,6 @@
 			
 		</div>
 
-        <div id="panel-pince">
-            <div class="title-pince">Pince</div>
-                <label class="ouvrir" >Ouvrir</label>
-                <label class="fermer" >Fermer</label>
-                <label class="monter" >Monter</label>
-                <label class="descendre" >Descendre</label>
-        </div>
-    <div id="panel-batterie" class="batterie">
-        <IMG  id="img-batterie" SRC="img/batterie_chargt_100_2.png"  ALT="Etat batterie" TITLE="Etat batterie">
-    </div>
 	</div>
 
 	</body>

@@ -69,7 +69,7 @@ $(function() {
                                    );
                             });
   
-  $( "#vitesse" ).change(function() {
+    $( "#vitesse" ).change(function() {
                         console.log( "modifiaction vitesse" );
                          $.post('fonction.php',
                                 { id: 17,
@@ -78,11 +78,12 @@ $(function() {
                         });
   
 	/* Permet de rafraichir l'image de la camera toutes les secondes */ 
-	function refresh() {
+	function refreshImage() {
 	   var tmp = new Date();
 	   var img = document.getElementById("cam");
 	   img.src = img.src + '?' + tmp.getTime();
     };
+  /* Permet de rafraichir l'image de la batterie */
   function refreshBatterie() {
     $.post('fonction.php',
          { id: 16 },
@@ -110,12 +111,41 @@ $(function() {
          });
   };
   
- 
+  /* CAPTEURS */
+  function refreshCapteurs() {
+  $.post('fonction.php', { id: 18 },
+         function (data){
+         objCapteurs = JSON.parse(data);
+         
+         valueAVD = parseInt(objCapteurs.AVD);
+         valueAVG = parseInt(objCapteurs.AVG);
+         valueARD = parseInt(objCapteurs.ARD);
+         valueARG = parseInt(objCapteurs.ARG);
+         
+         if (valueAVD == "true") { document.getElementById('capt-avd').src = "img/Capteur_avd_off.png"; }
+         else { document.getElementById('capt-avd').src = "img/Capteur_avd_on.png"; }
+         
+         if (valueAVG == "true") { document.getElementById('capt-avg').src = "img/Capteur_avg_off.png"; }
+         else { document.getElementById('capt-avg').src = "img/Capteur_avg_on.png"; }
+         
+         if (valueARD == "true") { document.getElementById('capt-ard').src = "img/Capteur_ard_off.png"; }
+         else { document.getElementById('capt-ard').src = "img/Capteur_ard_on.png"; }
+         
+         if (valueARG == "true") { document.getElementById('capt-arg').src = "img/Capteur_arg_off.png"; }
+         else { document.getElementById('capt-arg').src = "img/Capteur_arg_on.png"; }
+         
+        });
+  };
+         /* FIN CAPTEURS */
+  
+    /*  Fonction javascript lancer au démarrage */
 	window.onload = function() {
   
         //refresh();
-        setInterval(refreshBatterie,300000);
-        setInterval(refresh,100);
+        setInterval(refreshBatterie,300000);    // Rafraichissement de la batterie
+        setInterval(refreshImage,1000);  //Rafraichissement de l'image
+        //refreshCapteurs();    //Rafraichissement des capteurs
+        //setInterval(refreshCapteurs, 1000);   //Rafraichissement des capteurs
 
 
 	 };
@@ -126,13 +156,12 @@ $(function() {
   window.SpeechRecognition = window.SpeechRecognition||window.webkitSpeechRecognition ||null;
   
   if (window.SpeechRecognition === null) {
-  document.getElementById('ws-unsupported').classList.remove('hidden');
   document.getElementById('button-play-ws').setAttribute('disabled', 'disabled');
   document.getElementById('button-stop-ws').setAttribute('disabled', 'disabled');
   } else {
   var recognizer = new window.SpeechRecognition();
   var transcription = document.getElementById('transcription');
-  var log = document.getElementById('log');
+  //var log = document.getElementById('log');
   
   // Recogniser doesn't stop listening even if the user pauses
   recognizer.continuous = true;
@@ -164,22 +193,22 @@ $(function() {
   document.getElementById('button-play-ws').addEventListener('click', function() {
                                                              // Set if we need interim results
                                                              
-                                                             try {
+                                                             //try {
                                                              recognizer.start();
-                                                             log.innerHTML = 'Recognition started' + '<br />' + log.innerHTML;
-                                                             } catch(ex) {
-                                                             log.innerHTML = 'Recognition error: ' + ex.message + '<br />' + log.innerHTML;
-                                                             }
+                                                             //log.innerHTML = 'Recognition started' + '<br />' + log.innerHTML;
+                                                             //} catch(ex) {
+                                                             //log.innerHTML = 'Recognition error: ' + ex.message + '<br />' + log.innerHTML;
+                                                             //}
                                                              });
   
   document.getElementById('button-stop-ws').addEventListener('click', function() {
                                                              recognizer.stop();
-                                                             log.innerHTML = 'Recognition stopped' + '<br />' + log.innerHTML;
+                                                             //log.innerHTML = 'Recognition stopped' + '<br />' + log.innerHTML;
                                                              });
   
   document.getElementById('clear-all').addEventListener('click', function() {
                                                         transcription.textContent = '';
-                                                        log.textContent = '';
+                                                        //log.textContent = '';
                                                         });
   }
 

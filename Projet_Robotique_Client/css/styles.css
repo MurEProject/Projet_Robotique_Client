@@ -16,7 +16,7 @@ h1{
 	-moz-border-radius:10px 0;
 	-webkit-border-radius:10px 0;
 	border-radius:10px 0;
-	width: 600px;
+	width: 500px;
 	height:250px;
 	margin-left: 300px;
 	position:absolute;
@@ -214,7 +214,7 @@ h1{
 	width:250px;
 	height:150px;
 	margin-top:5px;
-	margin-left:15px;
+	margin-left:880px;
 	margin-bottom:25px;
 	padding-top:1px;
 	background:#353b41;
@@ -372,4 +372,51 @@ h1{
 #panel-batterie img
 {
 	max-width:150px;
+}
+
+#capteur-mo {
+	width:281px;
+	height:500px;
+	position:absolute;
+    margin-left:900px;
+	background-image:url(../img/Wall-E.jpg);
+}
+
+
+.capt
+{
+	width:50px;
+	position:relative;
+}
+
+#capt-arg
+{
+	float:left;
+	left:-12px;
+	top:443px;
+}
+
+#capt-avg
+{
+
+	float:left;
+	top:195px;
+	left:40px;
+}
+
+
+#capt-ard
+{
+	float:right;
+	left:50px;
+	top:425px;
+}
+
+#capt-avd
+{
+
+	float:right;
+	top:193px;
+	right:3px;
+
 }
