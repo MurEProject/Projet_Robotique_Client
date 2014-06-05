@@ -20,13 +20,6 @@
             <label class="camera-centrer" >Centrer</label>
             <label class="camera-droite" >Droite</label>
         </div>
-<div id="panel-pince">
-<div class="title-pince">Pince</div>
-<label class="ouvrir" >Ouvrir</label>
-<label class="fermer" >Fermer</label>
-<label class="monter" >Monter</label>
-<label class="descendre" >Descendre</label>
-</div>
     <!-- CAPTEURS -->
     <div id="capteur-mo">
         <IMG class="capt" id="capt-avd" SRC="img/Capteur_avd_on.png" ALT="capteur avd" TITLE="capteur avd">
@@ -38,15 +31,20 @@
 <input type="hidden" id="transcription" readonly="readonly"></input>
 
 <div class="buttons-wrapper">
-<button id="button-play-ws" class="button-demo">Play demo</button>
-<button id="button-stop-ws" class="button-demo">Stop demo</button>
+<button id="button-play-ws" class="button-demo">Demarrer</button>
+<button id="button-stop-ws" class="button-demo">Arreter</button>
 </div>
 
 		<div id="camera">
-		   <p>Photo de la camera à mettre : rafraichissement toutes les 2 secondes </p>
-		  <!-- Image rafraichie -->
-		  <IMG class="cam" id="cam" SRC="http://146.19.17.134/image2.jpg" ALT="cam" TITLE="cam">
+		  <IMG class="cam" id="cam" SRC="http://146.19.17.134/image2.jpg" ALT="cam" TITLE="cam" width="550px" height="400px">
 		</div>
+<div id="panel-pince">
+<div class="title-pince">Pince</div>
+<label class="ouvrir" >Ouvrir</label>
+<label class="fermer" >Fermer</label>
+<label class="monter" >Monter</label>
+<label class="descendre" >Descendre</label>
+</div>
 		<div id="information">
 			<div class="title-information">Informations</div>	
 			<label>Vitesse</label><input type="range" min="50" max="200" value="100" id="vitesse" name="vitesse"/>
