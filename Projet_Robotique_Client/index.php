@@ -58,8 +58,8 @@
 		<div id="information">
 			<div class="title-information">Informations</div>	
 			<label>Vitesse</label><input type="range" min="50" max="200" value="120" id="vitesse" name="vitesse"/>
-			<label>Coordo X</label><input type="text" id="x" name="x" value="">
-			<label>Coordo Y</label><input type="text" id="y" name="y" value="">
+			<label>Latitude</label><input type="text" id="x" name="x" value="" disabled>
+			<label>Longitude</label><input type="text" id="y" name="y" value="" disabled>
 			<div class="title-information">Rafraichir GPS</div>
 			
 		</div>
