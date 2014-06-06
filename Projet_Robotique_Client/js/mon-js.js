@@ -30,7 +30,7 @@ $(function() {
 		{ id: 6 },
 		function (data){
             obj = JSON.parse(data); //Parse les données json récupéréés pour qu'on puisse les lire
-            //console.log(obj.coordoX);
+            console.log(obj);
 			document.getElementById('x').value = obj.coordoX;
             document.getElementById('y').value = obj.coordoY;
 		});
@@ -91,7 +91,8 @@ $(function() {
          obj = JSON.parse(data);
          valueBatterie = parseInt(obj.Batterie);
          srcImg = "img/batterie_chargt_100_2.png";
-         if (valueBatterie == 100)
+        console.log(valueBatterie);
+        if (valueBatterie == 100)
          {
          srcImg = "img/batterie_chargt_100_2.png";
          }
@@ -117,10 +118,11 @@ $(function() {
          function (data){
          objCapteurs = JSON.parse(data);
          
-         valueAVD = parseInt(objCapteurs.AVD);
-         valueAVG = parseInt(objCapteurs.AVG);
-         valueARD = parseInt(objCapteurs.ARD);
-         valueARG = parseInt(objCapteurs.ARG);
+         console.log(objCapteurs);
+         valueAVD = objCapteurs.AVD;
+         valueAVG = objCapteurs.AVG;
+         valueARD = objCapteurs.ARD;
+         valueARG = objCapteurs.ARG;
          
          if (valueAVD == "true") { document.getElementById('capt-avd').src = "img/Capteur_avd_off.png"; }
          else { document.getElementById('capt-avd').src = "img/Capteur_avd_on.png"; }
@@ -142,10 +144,11 @@ $(function() {
 	window.onload = function() {
   
         //refresh();
+        refreshBatterie();
         setInterval(refreshBatterie,300000);    // Rafraichissement de la batterie
         setInterval(refreshImage,1000);  //Rafraichissement de l'image
-        //refreshCapteurs();    //Rafraichissement des capteurs
-        //setInterval(refreshCapteurs, 1000);   //Rafraichissement des capteurs
+        refreshCapteurs();    //Rafraichissement des capteurs
+        setInterval(refreshCapteurs, 1000);   //Rafraichissement des capteurs
 
 
 	 };
